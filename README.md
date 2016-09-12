@@ -23,14 +23,14 @@ Viewing and Running the texttests
 
 (assuming you already have texttest installed, see http://texttest.org)
 
-You will need to point out the location of your clone of the code, so that texttest can find it. In your personal texttest config file $HOME/.texttest/config, include this:
+You will need to point out the location of your clone of the code, so that texttest can find it. In your personal texttest config file $HOME/.texttest/config, include this: (create that file if it doesn't exist)
 
     [checkout_location]
-    yatzy:/home/demo/workspace/Yatzy-Approval-Kata-sample-solution
+    yatzy:/home/demo/workspace/Yatzy-Approval-Kata
 
 Then you can open the texttest GUI like this:
 
-    texttest -a yatzy -d /home/demo/workspace/Yatzy-Approval-Kata-sample-solution/texttests
+    texttest -a yatzy -d /home/demo/workspace/Yatzy-Approval-Kata/texttests
 
 adjust /home/demo/workspace as appropriate for your machine
 
