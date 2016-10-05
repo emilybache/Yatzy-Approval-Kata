@@ -1,5 +1,5 @@
 # Full path to the System Under Test (or Java Main Class name)
-executable:${TEXTTEST_CHECKOUT}/python/yatzy1.py
+executable:${TEXTTEST_CHECKOUT}/python/yatzy3.py
 
 # Naming scheme to use for files for stdin,stdout and stderr
 filename_convention_scheme:standard

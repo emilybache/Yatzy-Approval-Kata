@@ -111,6 +111,24 @@ CATEGORIES = {"chance": chance,
 if __name__ == "__main__":
     category = None
     if len(sys.argv) > 1:
+        if "--help" in sys.argv:
+            print("""\
+Yatzy calculator program. Usage:
+
+    yatzy.py <category>
+
+where <category> is the category to score. This should be one of:
+
+{}
+
+You should pass dice rolls to standard input, formatted as one roll of five dice per line of input:
+
+1,2,3,4,5
+1,2,2,3,3
+
+
+            """.format(sorted(CATEGORIES.keys())))
+            sys.exit(0)
         category = sys.argv[1]
     if not category in CATEGORIES.keys():
         print("unknown category: {}".format(category))
