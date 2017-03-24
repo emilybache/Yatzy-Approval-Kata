@@ -1,7 +1,22 @@
-Yatzy Approval Kata sample solution
-===================================
+Yatzy Approval Kata 
+====================
 
-This repo has a sample solution and texttest suite for this kata.
+This repo contains some code that could be used
+in a game of Yatzy. What the code should do is described below under 'Yatzy rules'.
+Your job is to use approval testing to write tests for the code, and
+identify bugs.
+
+You are provided with an initial approval test using the tool 'TextTest', which
+by default tests the 'yatzy1' version of the code. The first thing to do is to
+run this test and decide whether to approve the result.
+
+The next thing to do is to decide which version of the code you want to work with.
+They get buggier as you go from version 1 to 2 and from 2 to 3. I suggest you start
+by writing lots of tests for version 1, then see how many bugs they catch in versions
+2 and 3. Note you can switch version by changing the 'executable' listed in texttests/config.yatzy.
+
+There is another repo on github that contains a sample solution. I suggest you do
+the exercise yourself though, before you look at it. (https://github.com/emilybache/Yatzy-Approval-Kata-sample-solution)
 
 Viewing and Running the texttests
 ---------------------------------
