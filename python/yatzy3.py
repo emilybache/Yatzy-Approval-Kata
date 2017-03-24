@@ -257,37 +257,12 @@ def score(dice, category):
     score_function = CATEGORIES[category]
     return score_function(*dice)
 
-def _parse_dice(dice_str):
+def parse_dice_and_category(input_str):
+    dice, category = input_str.split()
+    return parse_dice(dice), category
+
+def parse_dice(dice_str):
     return [int(d) for d in dice_str.split(',')]
 
-
-if __name__ == "__main__":
-    category = None
-    if len(sys.argv) > 1:
-        if "--help" in sys.argv:
-            print("""\
-Yatzy calculator program. Usage:
-
-    yatzy.py <category>
-
-where <category> is the category to score. This should be one of:
-
-{}
-
-You should pass dice rolls to standard input, formatted as one roll of five dice per line of input:
-
-1,2,3,4,5
-1,2,2,3,3
-
-
-            """.format(sorted(CATEGORIES.keys())))
-            sys.exit(0)
-        category = sys.argv[1]
-    if not category in CATEGORIES.keys():
-        print("unknown category: {}".format(category))
-        sys.exit(-1)
-
-    for dice_input in sys.stdin.readlines():
-        dice_str = dice_input.strip()
-        dice = _parse_dice(dice_str)
-        print("""[{}] "{}": {}""".format(dice_str, category, score(dice, category)))
+def valid_categories():
+    return CATEGORIES.keys()

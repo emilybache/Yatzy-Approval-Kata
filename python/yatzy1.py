@@ -3,8 +3,24 @@
 import sys
 from collections import defaultdict
 
-def _parse_dice(dice_str):
-    dice = [int(d) for d in dice_str.split(',')]
+def parse_dice_and_category(input_str):
+    try:
+        dice, category = input_str.split()
+    except ValueError as e:
+        raise ValueError("Input should contain a space separating dice and category")
+
+    return parse_dice(dice), _validate_category(category)
+
+def _validate_category(category_str):
+    if not category_str.strip() in CATEGORIES.keys():
+        raise ValueError("Unknown category: {}".format(category_str))
+    return category_str
+
+def valid_categories():
+    return sorted(CATEGORIES.keys())
+
+def parse_dice(dice_str):
+    dice = [int(d) for d in dice_str.strip().split(',')]
     if len(dice) != 5:
         raise ValueError("Wrong number of dice. Expected 5, got {}".format(len(dice)))
     outside_range = filter(lambda x: x < 1 or x > 6, dice)
@@ -12,15 +28,15 @@ def _parse_dice(dice_str):
         raise ValueError("Illegal dice values: {}".format(outside_range))
     return dice
 
+def score(dice, category):
+    score_function = CATEGORIES[category]
+    return score_function(dice)
+
 def _frequencies(dice):
     frequencies = defaultdict(int)
     for die in dice:
         frequencies[die] += 1
     return frequencies
-
-def score(dice, category):
-    score_function = CATEGORIES[category]
-    return score_function(dice)
 
 def chance(dice):
     return sum(dice)
