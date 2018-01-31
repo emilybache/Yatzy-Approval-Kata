@@ -8,3 +8,7 @@ filename_convention_scheme:standard
 full_name:Yatzy
 
 default_checkout:yatzy
+
+# Do replace these with your favourite tools
+diff_program:meld
+view_program:subl
