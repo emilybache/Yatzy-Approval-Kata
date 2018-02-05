@@ -76,8 +76,8 @@
                         <artifactId>texttest-maven-plugin</artifactId>
                         <version>1.4</version>
                         <configuration>
-                            <appName>gr</appName>
-                            <installGlobally>true</installGlobally>
+                            <appName>yatzy</appName>
+                            <installGlobally>false</installGlobally>
                             <texttestRoot>${TEXTTEST_HOME}</texttestRoot>
                         </configuration>
                         <executions>
