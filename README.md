@@ -1,7 +1,7 @@
 Yatzy Approval Kata 
 ====================
 
-This repo contains some code that could be used in a game of Yatzy. What the code should do is described in the file 'yatzy_rules.md'.
+This repo contains some code that could be used in a game of Yatzy. What the code should do is described in the file [yatzy_rules.md](https://github.com/emilybache/Yatzy-Approval-Kata/blob/master/yatzy_rules.md).
 Your job is to write tests for the code, and identify bugs. To make it more 
 interesting, there are actually three implemenentations of the yatzy rules. They 
 get buggier as you go from version 1 to 2 and from 2 to 3. I suggest you start
@@ -30,11 +30,11 @@ Viewing and Running the texttests
 
 (assuming you already have texttest installed, see http://texttest.org)
 
-The simplest way is to open texttest like this:
+The simplest way is to open texttest in the same folder as this README.md file:
 
-	texttest -a yatzy -c $PWD -d $PWD/texttests 
-
-Note that $PWD should automatically expand to the complete path to the current working directory. If it does not, insert it by hand instead.
+    cd Yatzy-Approval-Kata
+	texttest 
 
 You can switch version from yatzy1 to yatzy2 and yatzy3 by changing the 'executable' listed in texttests/config.yatzy.
 
+If you prefer to start texttest in another folder, then set the environment variables TEXTTEST_CHECKOUT and TEXTTEST_HOME to the fully qualified path of the folder this README file is in.
