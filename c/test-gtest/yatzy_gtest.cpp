@@ -20,7 +20,7 @@ string printRoll(const Roll* roll) {
     return ss.str();
 }
 
-TEST(Yatzy, Yatzy)
+TEST(Yatzy, YatzyCategories)
 {
 
     int totalRolls = 2;
