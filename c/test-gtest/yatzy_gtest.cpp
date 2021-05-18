@@ -10,13 +10,18 @@ using namespace std;
 
 string printRoll(const Roll* roll) {
     stringstream ss = stringstream();
-    ss << "Roll [" <<
-       roll->dice[0] << ", " <<
-       roll->dice[1] << ", " <<
-       roll->dice[2] << ", " <<
-       roll->dice[3] << ", " <<
-       roll->dice[4]
-       << "]";
+    ss << "Roll [";
+
+    bool first = true;
+    for (int i = 0; i < 5; ++i) {
+        if (first)
+            first = false;
+        else
+            ss << ", ";
+        ss << roll->dice[i];
+    }
+
+    ss << "]";
     return ss.str();
 }
 
@@ -33,6 +38,8 @@ TEST(Yatzy, YatzyCategories)
         Roll *d = dice_factory_from_array(rolls[i]);
         ss << printRoll(d) << "\n";
         ss << "   Chance: " << score(d, CHANCE) << "\n";
+        // TODO: the other categories
+
         ss << "\n";
     }
 
