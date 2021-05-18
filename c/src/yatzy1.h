@@ -18,8 +18,6 @@ int Ones(int d1, int d2, int d3, int d4, int d5);
 int Twos(int d1, int d2, int d3, int d4, int d5);
 int Threes(int d1, int d2, int d3, int d4, int d5);
 
-
-
 Roll* dice_factory(int d1, int d2, int d3, int d4, int _5);
 Roll* dice_factory_from_array(int* dice);
 void dice_destructor(Roll* yatzy);

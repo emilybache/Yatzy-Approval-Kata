@@ -25,6 +25,44 @@ string printRoll(const Roll* roll) {
     return ss.str();
 }
 
+string printCategory(int category) {
+    switch (category) {
+        case CHANCE:
+            return "Chance";
+        case YATZY:
+            return "Yatzy";
+        case ONES:
+            return "Ones";
+        case TWOS:
+            return "Twos";
+        case THREES:
+            return "Threes";
+        case FOURS:
+            return "Fours";
+        case FIVES:
+            return "Fives";
+        case SIXES:
+            return "Sixes";
+        case PAIR:
+            return "Pair";
+        case TWO_PAIRS:
+            return "Two Pairs";
+        case THREE_OF_A_KIND:
+            return "Three of a kind";
+        case FOUR_OF_A_KIND:
+            return "Four of a kind";
+        case SMALL_STRAIGHT:
+            return "Small Straight";
+        case LARGE_STRAIGHT:
+            return "Large Straight";
+        case FULL_HOUSE:
+            return "Full House";
+        default:
+            return "";
+    }
+}
+
+
 TEST(Yatzy, YatzyCategories)
 {
 
@@ -33,11 +71,12 @@ TEST(Yatzy, YatzyCategories)
             {2, 3, 4, 5, 1},
             {4, 3, 4, 5, 1}
     };
+
     stringstream ss = stringstream();
     for (int i = 0; i < totalRolls; ++i) {
         Roll *d = dice_factory_from_array(rolls[i]);
         ss << printRoll(d) << "\n";
-        ss << "   Chance: " << score(d, CHANCE) << "\n";
+        ss << "   " << printCategory(CHANCE) << ": " << score(d, CHANCE) << "\n";
         // TODO: the other categories
 
         ss << "\n";
