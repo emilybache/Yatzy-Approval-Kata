@@ -1,0 +1,103 @@
+Roll [2, 3, 4, 5, 1]
+   Chance: 15
+   Yatzy: 0
+   Ones: 1
+   Twos: 2
+   Threes: 3
+   Fours: 4
+   Fives: 5
+   Sixes: 0
+   Pair: 0
+   Two Pairs: 0
+   Three of a kind: 0
+   Four of a kind: 0
+   Small Straight: 15
+   Large Straight: 0
+   Full House: 0
+
+Roll [4, 3, 4, 5, 1]
+   Chance: 17
+   Yatzy: 0
+   Ones: 1
+   Twos: 0
+   Threes: 3
+   Fours: 8
+   Fives: 5
+   Sixes: 0
+   Pair: 8
+   Two Pairs: 0
+   Three of a kind: 0
+   Four of a kind: 0
+   Small Straight: 0
+   Large Straight: 0
+   Full House: 0
+
+Roll [3, 3, 3, 3, 3]
+   Chance: 15
+   Yatzy: 50
+   Ones: 0
+   Twos: 0
+   Threes: 15
+   Fours: 0
+   Fives: 0
+   Sixes: 0
+   Pair: 6
+   Two Pairs: 0
+   Three of a kind: 9
+   Four of a kind: 12
+   Small Straight: 0
+   Large Straight: 0
+   Full House: 0
+
+Roll [2, 2, 1, 1, 1]
+   Chance: 7
+   Yatzy: 0
+   Ones: 3
+   Twos: 4
+   Threes: 0
+   Fours: 0
+   Fives: 0
+   Sixes: 0
+   Pair: 4
+   Two Pairs: 6
+   Three of a kind: 3
+   Four of a kind: 0
+   Small Straight: 0
+   Large Straight: 0
+   Full House: 7
+
+Roll [2, 6, 5, 6, 5]
+   Chance: 24
+   Yatzy: 0
+   Ones: 0
+   Twos: 2
+   Threes: 0
+   Fours: 0
+   Fives: 10
+   Sixes: 12
+   Pair: 12
+   Two Pairs: 22
+   Three of a kind: 0
+   Four of a kind: 0
+   Small Straight: 0
+   Large Straight: 0
+   Full House: 0
+
+Roll [2, 6, 5, 3, 4]
+   Chance: 20
+   Yatzy: 0
+   Ones: 0
+   Twos: 2
+   Threes: 3
+   Fours: 4
+   Fives: 5
+   Sixes: 6
+   Pair: 0
+   Two Pairs: 0
+   Three of a kind: 0
+   Four of a kind: 0
+   Small Straight: 0
+   Large Straight: 20
+   Full House: 0
+
+

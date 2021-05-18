@@ -124,7 +124,7 @@ int ScorePair(Roll *yatzy, int d1, int d2, int d3, int d4, int d5) {
     counts[d5 - 1]++;
     int at;
     for (at = 0; at != 6; at++)
-        if (counts[6 - at - 1] == 2)
+        if (counts[6 - at - 1] >= 2)
             return (6 - at) * 2;
     return 0;
 }
