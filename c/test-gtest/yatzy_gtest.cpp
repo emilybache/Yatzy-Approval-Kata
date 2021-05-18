@@ -31,7 +31,7 @@ TEST(Yatzy, YatzyCategories)
     int totalRolls = 2;
     int rolls[][5] = {
             {2, 3, 4, 5, 1},
-            {3, 3, 4, 5, 1}
+            {4, 3, 4, 5, 1}
     };
     stringstream ss = stringstream();
     for (int i = 0; i < totalRolls; ++i) {
