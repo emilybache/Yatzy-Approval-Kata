@@ -8,8 +8,8 @@ extern "C"
 
 using namespace std;
 
-string printRoll(const Roll* roll) {
-    stringstream ss = stringstream();
+ostream& operator<<(ostream& ss, const Roll& roll)
+{
     ss << "Roll [";
 
     bool first = true;
@@ -18,11 +18,56 @@ string printRoll(const Roll* roll) {
             first = false;
         else
             ss << ", ";
-        ss << roll->dice[i];
+        ss << roll.dice[i];
     }
 
     ss << "]";
-    return ss.str();
+    return ss;
+}
+
+
+
+string printCategory(int category) {
+    switch (category) {
+        case CHANCE:
+            return "Chance";
+        case YATZY:
+            return "Yatzy";
+        case ONES:
+            return "Ones";
+        case TWOS:
+            return "Twos";
+        case THREES:
+            return "Threes";
+        case FOURS:
+            return "Fours";
+        case FIVES:
+            return "Fives";
+        case SIXES:
+            return "Sixes";
+        case PAIR:
+            return "Pair";
+        case TWO_PAIRS:
+            return "Two Pairs";
+        case THREE_OF_A_KIND:
+            return "Three of a kind";
+        case FOUR_OF_A_KIND:
+            return "Four of a kind";
+        case SMALL_STRAIGHT:
+            return "Small Straight";
+        case LARGE_STRAIGHT:
+            return "Large Straight";
+        case FULL_HOUSE:
+            return "Full House";
+        default:
+            return "";
+    }
+}
+
+ostream& operator<<(ostream& ss, const category& category)
+{
+    ss << printCategory(category);
+    return ss;
 }
 
 TEST(Yatzy, YatzyCategories)
@@ -41,7 +86,7 @@ TEST(Yatzy, YatzyCategories)
     stringstream ss = stringstream();
     for (int i = 0; i < totalRolls; ++i) {
         Roll *d = dice_factory_from_array(rolls[i]);
-        ss << printRoll(d) << "\n";
+        ss << *d << "\n";
         ss << "   Chance: " << score(d, CHANCE) << "\n";
         ss << "   Yatzy: " << score(d, YATZY) << "\n";
         ss << "   Ones: " << score(d, ONES) << "\n";
@@ -62,6 +107,27 @@ TEST(Yatzy, YatzyCategories)
     }
 
     ApprovalTests::Approvals::verify(ss.str());
+}
+
+TEST(Yatzy, YatzyCategoriesCombinations)
+{
+    vector<Roll> rolls = {
+            *dice_factory(2, 3, 4, 5, 1),
+            *dice_factory(4, 3, 4, 5, 1),
+            *dice_factory(3, 3, 3, 3, 3),
+            *dice_factory(2, 2, 1, 1, 1),
+            *dice_factory(2, 6, 5, 6, 5),
+            *dice_factory(2, 6, 5, 3, 4),
+
+    };
+    vector<category> categories = {CHANCE, YATZY, ONES, TWOS, THREES, FOURS, FIVES, SIXES,
+                  PAIR, TWO_PAIRS, THREE_OF_A_KIND, FOUR_OF_A_KIND, SMALL_STRAIGHT, LARGE_STRAIGHT, FULL_HOUSE};
+
+    auto f = [](Roll roll, category category) {
+        return score(&roll, category);
+    };
+
+    ApprovalTests::CombinationApprovals::verifyAllCombinations(f, rolls, categories);
 }
 
 
