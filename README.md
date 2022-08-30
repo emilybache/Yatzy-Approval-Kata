@@ -23,19 +23,18 @@ Writing tests
 
 You can write tests for whichever of the three implementations you wish, using whichever tool you wish. You are provided with an initial Approval Test using the tool [TextTest](http://texttest.org). Other approval testing tools exist, for example [Approval Tests](http://approvaltests.com/). 
 
-There is another repo on github that contains a sample solution using TextTest. I suggest you do
-the exercise yourself though, before you look at it. [Sample solution](https://github.com/emilybache/Yatzy-Approval-Kata-sample-solution)
+There is a sample solution on the branch 'with_tests'. I suggest you do
+the exercise yourself though, before you look at it.
 
 Viewing and Running the texttests
 ---------------------------------
 
 (assuming you already have texttest installed, see http://texttest.org)
 
-The simplest way is to open texttest in the same folder as this README.md file:
+Open texttest from the same folder as this README.md file:
 
     cd Yatzy-Approval-Kata
 	texttest 
 
 You can switch version from yatzy1 to yatzy2 and yatzy3 by changing the 'executable' listed in texttests/config.yatzy.
 
-If you prefer to start texttest in another folder, then set the environment variables TEXTTEST_CHECKOUT and TEXTTEST_HOME to the fully qualified path of the folder this README file is in.
