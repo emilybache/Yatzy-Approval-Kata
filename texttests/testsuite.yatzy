@@ -1,5 +1,16 @@
 helptext
-
-# The player scores the sum of all dice,
-# no matter what they read.
 Chance
+Yatzy
+Ones
+Twos
+Threes
+Fours
+Fives
+Sixes
+Pair
+Threeofakind
+Fourofakind
+Smallstraight
+Largestraight
+Twopairs
+Fullhouse
