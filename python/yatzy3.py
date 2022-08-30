@@ -1,6 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import sys
+
 
 class Yatzy:
 
@@ -16,16 +17,16 @@ class Yatzy:
 
     @staticmethod
     def yatzy(d1, d2, d3, d4, d5):
-        counts = [0]*(len(dice)+1)
+        counts = [0] * (len(dice) + 1)
         for die in dice:
-            counts[die-1] += 1
+            counts[die - 1] += 1
         for i in range(len(counts)):
             if counts[i] == 5:
                 return 50
         return 0
 
     @staticmethod
-    def ones( d1,  d2,  d3,  d4,  d5):
+    def ones(d1, d2, d3, d4, d5):
         sum = 0
         if (d1 == 1):
             sum += 1
@@ -40,40 +41,38 @@ class Yatzy:
 
         return sum
 
-
     @staticmethod
-    def twos( d1,  d2,  d3,  d4,  d5):
+    def twos(d1, d2, d3, d4, d5):
         sum = 0
         if (d1 == 2):
-             sum += 2
+            sum += 2
         if (d2 == 2):
-             sum += 2
+            sum += 2
         if (d3 == 2):
-             sum += 2
+            sum += 2
         if (d4 == 2):
-             sum += 2
+            sum += 2
         if (d5 == 2):
-             sum += 2
+            sum += 2
         return sum
 
     @staticmethod
-    def threes( d1,  d2,  d3,  d4,  d5):
+    def threes(d1, d2, d3, d4, d5):
         s = 0
         if (d1 == 3):
-             s += 3
+            s += 3
         if (d2 == 3):
-             s += 3
+            s += 3
         if (d3 == 3):
-             s += 3
+            s += 3
         if (d4 == 3):
-             s += 3
+            s += 3
         if (d5 == 3):
-             s += 3
+            s += 3
         return s
 
-
     def __init__(self, d1, d2, d3, d4, _5):
-        self.dice = [0]*5
+        self.dice = [0] * 5
         self.dice[0] = d1
         self.dice[1] = d2
         self.dice[2] = d3
@@ -87,7 +86,6 @@ class Yatzy:
                 sum += 4
         return sum
 
-
     def fives(self):
         s = 0
         i = 0
@@ -95,7 +93,6 @@ class Yatzy:
             if (self.dice[i] == 5):
                 s = s + 5
         return s
-
 
     def sixes(self):
         sum = 0
@@ -113,37 +110,37 @@ class Yatzy:
         return Yatzy(*args).fours()
 
     @staticmethod
-    def calculate_sixes(d1,  d2,  d3,  d4,  d5):
-        return Yatzy(d1,  d2,  d3,  d4,  d5).sixes()
+    def calculate_sixes(d1, d2, d3, d4, d5):
+        return Yatzy(d1, d2, d3, d4, d5).sixes()
 
     @staticmethod
-    def score_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
+    def score_pair(d1, d2, d3, d4, d5):
+        counts = [0] * 6
+        counts[d1 - 1] += 1
+        counts[d2 - 1] += 1
+        counts[d3 - 1] += 1
+        counts[d4 - 1] += 1
+        counts[d5 - 1] += 1
         at = 0
         for at in range(6):
-            if (counts[6-at-1] == 2):
-                return (6-at)*2
+            if (counts[6 - at - 1] == 2):
+                return (6 - at) * 2
         return 0
 
     @staticmethod
-    def two_pair( d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
+    def two_pair(d1, d2, d3, d4, d5):
+        counts = [0] * 6
+        counts[d1 - 1] += 1
+        counts[d2 - 1] += 1
+        counts[d3 - 1] += 1
+        counts[d4 - 1] += 1
+        counts[d5 - 1] += 1
         n = 0
         score = 0
         for i in range(6):
-            if (counts[6-i-1] >= 2):
-                n = n+1
-                score += (6-i)
+            if (counts[6 - i - 1] >= 2):
+                n = n + 1
+                score += (6 - i)
 
         if (n == 2):
             return score * 2
@@ -151,69 +148,65 @@ class Yatzy:
             return 0
 
     @staticmethod
-    def four_of_a_kind( _1,  _2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[_1-1] += 1
-        tallies[_2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
+    def four_of_a_kind(_1, _2, d3, d4, d5):
+        tallies = [0] * 6
+        tallies[_1 - 1] += 1
+        tallies[_2 - 1] += 1
+        tallies[d3 - 1] += 1
+        tallies[d4 - 1] += 1
+        tallies[d5 - 1] += 1
         for i in range(6):
             if (tallies[i] >= 4):
-                return (i+1) * 4
+                return (i + 1) * 4
         return 0
 
-
     @staticmethod
-    def three_of_a_kind( d1,  d2,  d3,  d4,  d5):
-        t = [0]*6
-        t[d1-1] += 1
-        t[d2-1] += 1
-        t[d3-1] += 1
-        t[d4-1] += 1
-        t[d5-1] += 1
+    def three_of_a_kind(d1, d2, d3, d4, d5):
+        t = [0] * 6
+        t[d1 - 1] += 1
+        t[d2 - 1] += 1
+        t[d3 - 1] += 1
+        t[d4 - 1] += 1
+        t[d5 - 1] += 1
         for i in range(6):
             if (t[i] >= 3):
-                return (i+1) * 3
+                return (i + 1) * 3
         return 0
 
-
     @staticmethod
-    def smallStraight( d1,  d2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
+    def smallStraight(d1, d2, d3, d4, d5):
+        tallies = [0] * 6
+        tallies[d1 - 1] += 1
+        tallies[d2 - 1] += 1
+        tallies[d3 - 1] += 1
+        tallies[d4 - 1] += 1
+        tallies[d5 - 1] += 1
         if (tallies[0] == 1 and
-            tallies[1] == 1 and
-            tallies[2] == 1 and
-            tallies[3] == 1 and
-            tallies[4] == 1):
+                tallies[1] == 1 and
+                tallies[2] == 1 and
+                tallies[3] == 1 and
+                tallies[4] == 1):
             return 15
         return 0
 
-
     @staticmethod
-    def largeStraight( d1,  d2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
+    def largeStraight(d1, d2, d3, d4, d5):
+        tallies = [0] * 6
+        tallies[d1 - 1] += 1
+        tallies[d2 - 1] += 1
+        tallies[d3 - 1] += 1
+        tallies[d4 - 1] += 1
+        tallies[d5 - 1] += 1
         if (tallies[1] == 1 and
-            tallies[2] == 1 and
-            tallies[3] == 1 and
-            tallies[4] == 1
-            and tallies[5] == 1):
+                tallies[2] == 1 and
+                tallies[3] == 1 and
+                tallies[4] == 1
+                and tallies[5] == 1):
             return 20
         return 0
 
-
     @staticmethod
-    def fullHouse( d1,  d2,  d3,  d4,  d5):
+    def fullHouse(d1, d2, d3, d4, d5):
         tallies = []
         _2 = False
         i = 0
@@ -221,29 +214,28 @@ class Yatzy:
         _3 = False
         _3_at = 0
 
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
+        tallies = [0] * 6
+        tallies[d1 - 1] += 1
+        tallies[d2 - 1] += 1
+        tallies[d3 - 1] += 1
+        tallies[d4 - 1] += 1
+        tallies[d5 - 1] += 1
 
         for i in range(6):
             if (tallies[i] == 2):
                 _2 = True
-                _2_at = i+1
-
+                _2_at = i + 1
 
         for i in range(6):
             if (tallies[i] == 3):
                 _3 = True
-                _3_at = i+1
-
+                _3_at = i + 1
 
         if (_2 and _3):
             return _2_at * 2 + _3_at * 3
         else:
             return 0
+
 
 CATEGORIES = {"chance": Yatzy.chance,
               "yatzy": Yatzy.yatzy,
@@ -253,16 +245,20 @@ CATEGORIES = {"chance": Yatzy.chance,
               "smallstraight": Yatzy.smallStraight, "largestraight": Yatzy.largeStraight,
               "twopairs": Yatzy.two_pair, "fullhouse": Yatzy.fullHouse}
 
+
 def score(dice, category):
     score_function = CATEGORIES[category]
     return score_function(*dice)
+
 
 def parse_dice_and_category(input_str):
     dice, category = input_str.split()
     return parse_dice(dice), category
 
+
 def parse_dice(dice_str):
     return [int(d) for d in dice_str.split(',')]
+
 
 def valid_categories():
     return CATEGORIES.keys()
