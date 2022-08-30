@@ -13,7 +13,7 @@ def parse_dice(dice_str):
 
 
 def valid_categories():
-    return CATEGORIES.keys()
+    return list(CATEGORIES.keys())
 
 
 class Yatzy:
